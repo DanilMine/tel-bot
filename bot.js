@@ -1,8 +1,8 @@
-const Telegraf = require('telegraf').Telegraff
+const Telegraf = require('telegraf').Telegraf;
 
 const mysql = require('mysql');
 
-const bot = new Telegraf('_TOKEN_');
+const bot = new Telegraf('1987739698:AAHakqMQ2OwJaVNt9LF89smkP4K9VpbRW6g');
 
 const con = mysql.createConnection({
     host: '127.0.0.1',
@@ -12,7 +12,7 @@ const con = mysql.createConnection({
 });
 
 
-bot.onText(/\/start /, msg => {
+bot.command(/\/start /, msg => {
     const chatId = msg.chat.id;
     const user_id = msg.from.id;
     const name = msg.from.name;
